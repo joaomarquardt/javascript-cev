@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Vamos contar, meu cria</h1>
+    <main>
+        <form action="#" method="post" name="formulario">
+            <p>
+                <label for="inicio">Início:</label>
+                <input type="number" name="inicio" id="inicio" class="numero">
+            </p>
+            <p>
+                <label for="fim">Fim:</label>
+                <input type="number" name="fim" id="fim" class="numero">
+            </p>
+            <p>
+                <label for="passo">Passo:</label>
+                <input type="number" name="passo" id="passo" class="numero">
+            </p>
+            <p>
+                <input type="button" value="Contar" id="botao" onclick="contar()">
+            </p>
+            <p id="res">
+                Preparando a contagem...
+            </p>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; João Marquardt</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

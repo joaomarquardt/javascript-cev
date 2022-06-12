@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        body {
+            background-color: aqua;
+        }
+
+        header {
+            color: white;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-weight: bolder;
+            text-shadow: 2px 2px rgba(0, 0, 0, 0.411);
+        }
+
+        main {
+            background-color: white;
+            height: 300px;
+            width: 500px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.377);
+            padding: 10px;
+        }
+
+        div {
+            padding: 5px;
+        }
+
+        div#img > img {
+            height: 250px;
+            width: 250px;
+            border-radius: 50%;
+        }
+
+        footer {
+            color: white;
+            margin-top: 20px;
+            font-weight: bolder;
+            font-style: italic;
+        }
+
+    </style>
+</head>
+<body onload="verificar()">
+    <header>
+        <h1>Hora do Dia</h1>
+    </header>
+    <main>
+        <section>
+            <div id="txthour">
+
+            </div>
+            <div id="img">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; João Marquardt</p>
+    </footer>
+
+    <script>
+        function verificar() {
+            var agora = new Date()
+            var hora = agora.getHours()
+            var txt = document.getElementById('txthour')
+            var image = document.getElementById('img')
+            txt.innerHTML = `Agora são ${hora} horas`
+            if (hora < 12) {
+                image.innerHTML = `<img src="dia.jpg" alt="Dia ensolarado">`
+                document.body.style.backgroundColor = '#ddc756'
+            } else if (hora < 18) {
+                image.innerHTML = `<img src="tarde.jpg" alt="Pôr do sol">`
+                document.body.style.backgroundColor = '#B1A45A'
+            } else if (hora => 18) {
+                image.innerHTML = `<img src="noite.jpg" alt="Noite noitada">`
+                document.body.style.backgroundColor = '#272020'
+
+                /* 
+                < 12 horas - cod #ddc756
+                <= 18 horas - cod #b1a45a
+                > 18 horas - cod #272020
+
+                */
+
+                /* NO CASO DAS IMAGENS TAMBÉM POSSO CRIAR UMA TAG DE IMAGEM DENTRO DA DIV IMG E MANIPULA-LA
+                
+                EXEMPLO
+                
+                img.src = "noite.jpg"
+                ao inves de
+                image.innerHTML = `<img src="noite.jpg" alt="Noite noitada">`*/ 
+            }
+        }
+        
+    </script>
+</body>
+</html>

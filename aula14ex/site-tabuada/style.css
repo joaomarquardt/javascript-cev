@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: lightskyblue;
+}
+
+h1 {
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+main {
+    background-color: white;
+    width: 400px;
+    padding: 10px;
+    margin: auto;
+    border-radius: 5px;
+    box-shadow: 0px 3px 6px 1px rgb(0 0 0 / 27%);
+}
+
+form input {
+    padding: 3px;
+}
+
+.bloco-res {
+    margin-top: 10px;
+}
+
+
+.bloco-res #restab {
+    padding: 3px;
+    height: 150px;
+}
+
+footer p {
+    font-size: 1.2em;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+    font-style: italic;
+    color: rgb(105, 104, 104);
+}

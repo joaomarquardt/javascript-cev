@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        var nome = window.prompt("Qual é seu nome?")
+        document.writeln(`Seu nome tem ${nome.length} letras<br>`)
+        document.write(`Seu nome em maíusculas é ${nome.toUpperCase()}<br>`)
+        document.write(`Seu nome em minúsculas é ${nome.toLowerCase()}`)
+        */
+
+       var produto = window.prompt("Qual produto você deseja comprar?")
+       var valor = window.prompt("Quanto esse produto está custando em dólares?")
+       var valReal = valor * 4.70
+       document.write(`Você quer comprar um ${produto.toLowerCase()} que custa ${valor} dólares<br>`)
+       document.write(`Na cotação atual, este produto estará custando ${valReal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} `)
+</script>
+</body>
+</html>

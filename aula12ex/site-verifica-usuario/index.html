@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de idade</title>
+    <style>
+        * {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: skyblue;
+        }
+        h1 {
+            text-align: center;
+            margin: 10px 0px 20px 0px;
+        }
+        main {
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.329);
+            border-radius: 10px;
+            padding: 20px 10px 20px 10px;
+            background-color: white;
+            margin: auto;
+            width: 400px;
+        }
+
+        main div {
+            padding-bottom: 15px;
+        }
+
+        p#copyright {
+            font-style: italic;
+            padding-top: 20px;
+            text-align: center;
+            color: rgb(80, 79, 79);
+            font-weight: bold;
+        }
+
+        p#res {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificador de idade</h1>
+    <main>
+        <form action="">
+            <div>
+                <label for="nascimento">Ano de Nascimento:</label>
+                <input type="number" name="nascimento" id="nascimento" min="0" >
+            </div>
+            <div>
+                <label for="sexo">Sexo:</label>
+                <input type="radio" name="radio" id="masc" checked>
+                <label for="masc">Masculino</label>
+                <input type="radio" name="radio" id="femin">
+                <label for="femin">Feminino</label>
+            </div>
+            <div>
+                <input type="button" value="Verificar" onclick="verifica()">
+            </div>
+            <p id="res">
+                Preencha os dados acima para ver o resultado!</p>
+        </form>
+    </main>
+
+    <p id="copyright">&copy; João Marquardt</p>
+
+    <script>
+        function verifica() {
+            var data = new Date()
+            var anoatual = data.getFullYear()
+            var anonasc = document.getElementById('nascimento').value
+            var sexo = document.getElementsByName('radio')
+            var res = document.getElementById('res')
+            if (anonasc.length == 0 || anonasc > anoatual) {
+                window.alert("Verifique os dados e tente novamente chifrudo!")
+            } else {
+                var idade = anoatual - Number(anonasc)
+                var genero = ''
+                var img = document.createElement('img')
+                img.setAttribute('id', 'foto')
+                
+                
+                
+                if (sexo[0].checked) {
+                    genero = 'homem'
+                    if (idade >= 0 && idade < 12) {
+                        img.setAttribute('src', 'imagens/foto-bebe-m.png')
+                    } else if (idade < 21) {
+                        img.setAttribute('src', 'imagens/foto-jovem-m.png')
+                    } else if (idade < 50) {
+                        img.setAttribute('src', 'imagens/foto-adulto-m.png')
+                    } else {
+                        img.setAttribute('src', 'imagens/foto-idoso-m.png')
+                    }
+                } else if (sexo[1].checked) {
+                    genero = "mulher"
+                    if (idade >= 0 && idade < 12) {
+                        img.setAttribute('src', 'imagens/foto-bebe-f.png')
+                    } else if (idade < 21) {
+                        img.setAttribute('src', 'imagens/foto-jovem-f.png')
+                    } else if (idade < 50) {
+                        img.setAttribute('src', 'imagens/foto-adulto-f.png')
+                    } else {
+                        img.setAttribute('src', 'imagens/foto-idoso-f.png')
+                    }
+                }
+
+                res.innerHTML = `Você é ${genero} de ${idade} anos.`
+                res.appendChild(img)
+            }
+        }    
+    </script>
+</body>
+</html>

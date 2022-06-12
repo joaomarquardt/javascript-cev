@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ai calica</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 5px;
+        }
+
+        input {
+            padding: 10px;
+        }
+
+        #txtvel {
+            width: 180px;
+        }
+
+        div#resultado {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de multas</h1>
+    <label for="txtvel">Velocidade do carro: </label>
+    <input type="number" name="txtvel" id="txtvel" placeholder="digite a velocidade do carro"> Km/h
+    <input type="button" value="verificar" onclick="calcular()">
+    <div id="resultado"></div>
+
+    <script>
+        function calcular() {
+            var txtv = document.getElementById('txtvel')
+            var res = document.getElementById('resultado')
+            var vel = Number(txtv.value)
+            res.innerHTML = `<p>Sua velocidade atual é de <strong>${vel}Km/h</strong></p>`
+            
+            if (vel > 60) {
+                res.innerHTML += `<p>Caralho viado, tá achando que a vida é igual GTA??! Vai tomar logo uma multa pra ficar esperto.</p>`
+            }
+            
+            else {
+                res.innerHTML = 'Boa mlk!'
+            }
+            res.innerHTML += `<p>Dirija sempre com cinto de segurança</p>`
+
+        }
+    </script>
+</body>
+</html>
